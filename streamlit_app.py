@@ -1,3 +1,4 @@
 import streamlit as st
-
-st.write("hola")
+from PIL import Image 
+image = Image.open('hidra.png')
+st.image(image)
