@@ -133,7 +133,7 @@ def show_page3():
     #ax.plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
     #plt.title('G')
     data = np.random.normal(0, 1, size=100)
-    plt.hist(datset, bins=20)
+    plt.hist(data, bins=20)
     st.pyplot()
 
 if __name__ == "__main__":
