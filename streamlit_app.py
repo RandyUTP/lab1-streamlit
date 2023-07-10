@@ -123,6 +123,9 @@ def show_page3():
     # Mostrar el gráfico de líneas múltiples en un solo gráfico
     for provincia in provincias:
         st.line_chart(casos_por_anio_provincia[provincia])
+    #mostrar datos 
+      data_nn =dataset.dropna(subset=['PROVINCIA', 'DISTRITO'])
+      st.write(data_nn.isnull().sum())
 
 if __name__ == "__main__":
     main()
