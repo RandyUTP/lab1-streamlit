@@ -12,8 +12,5 @@ def load_dataset():
 
 def  carga():
     data_nn =dataset.dropna(subset=['PROVINCIA', 'DISTRITO'])
-    plt.figure(figsize=(16,6))
-    plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
-    plt.title('G')
-    plt.show()
-    return plt
+    print(data_nn.isnull().sum())
+    
