@@ -11,7 +11,7 @@ def load_dataset():
     return dataset
 
 
-data_nn =data.dropna(subset=['PROVINCIA', 'DISTRITO'])
+data_nn =dataset.dropna(subset=['PROVINCIA', 'DISTRITO'])
 plt.figure(figsize=(16,6))
 plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
 plt.title('G')
