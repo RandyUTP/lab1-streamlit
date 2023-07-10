@@ -137,7 +137,7 @@ def show_page3():
 
     #GRAFICO DE BARRAS DEL PROMEDIO DE LAS EDADES DE LAS PERSONAS CON CASOS DE ANEMIA POR PROVINCIAS
     st.write("GRAFICO DE BARRAS DEL PROMEDIO DE LAS EDADES DE LAS PERSONAS CON CASOS DE ANEMIA POR PROVINCIAS")
-    promedio = data.groupby('PROVINCIA')['EDAD'].mean()
+    promedio = dataset.groupby('PROVINCIA')['EDAD'].mean()
     plt.figure(figsize=(16,6))
     promedio.plot(kind='bar')
     plt.title('PROMEDIO DE EDAD POR PROVINCIAS')
@@ -146,7 +146,7 @@ def show_page3():
 
     #GRAFICO DE BARRAS DE LA CANTIDAD DE CASOS(Numero de casos con anemia por debajo del indicador de salud) Y NORMAL(Numero de casos en condiciones normales (sin anemia)) POR PROVINCIA
     st.write("GRAFICO DE BARRAS DE LA CANTIDAD DE CASOS(Numero de casos con anemia por debajo del indicador de salud) Y NORMAL(Numero de casos en condiciones normales (sin anemia)) POR PROVINCIA")
-    promedio = data.groupby('PROVINCIA').agg({'CASOS': 'sum', 'NORMAL': 'sum'})
+    promedio = dataset.groupby('PROVINCIA').agg({'CASOS': 'sum', 'NORMAL': 'sum'})
     plt.figure(figsize=(16,6))
     promedio.plot(kind='bar')
     plt.title('CANTIDAD DE CASOS Y NORMAL POR PROVINCIAS')
@@ -164,7 +164,7 @@ def show_page3():
 
     #GRAFICO DE BARRAS DE CANTIDAD DE CASOS(Numero de casos con anemia por debajo del indicador de salud) Y NORMAL(Numero de casos en condiciones normales (sin anemia)) POR DISTRITO DE LA PROVINCIA DE CHUMBIVILCAS
     st.write("GRAFICO DE BARRAS DE CANTIDAD DE CASOS(Numero de casos con anemia por debajo del indicador de salud) Y NORMAL(Numero de casos en condiciones normales (sin anemia)) POR DISTRITO DE LA PROVINCIA DE CHUMBIVILCAS")
-    datos_prov = data[data['PROVINCIA'] == 'CHUMBIVILCAS']
+    datos_prov = dataset[dataset['PROVINCIA'] == 'CHUMBIVILCAS']
     promedio = datos_prov.groupby('DISTRITO').agg({'CASOS': 'sum', 'NORMAL': 'sum'})
     plt.figure(figsize=(16,6))
     promedio.plot(kind='bar')
@@ -176,7 +176,7 @@ def show_page3():
     st.write("Grafico de promedio de casos de anemia por año y provincia")
     provincias = ['ESPINAR', 'CANAS', 'PARURO']
     # Filtrar los datos para las provincias seleccionadas
-    data_provincias = data[data['PROVINCIA'].isin(provincias)]
+    data_provincias = dataset[dataset['PROVINCIA'].isin(provincias)]
     # Calcular los promedios de casos de anemia por año y provincia
     promedios_por_anio_provincia = data_provincias.groupby(['ANIO', 'PROVINCIA'])['CASOS'].mean().unstack()
     #Crear el gráfico de barras para los promedios
