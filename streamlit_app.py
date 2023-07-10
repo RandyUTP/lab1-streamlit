@@ -188,8 +188,36 @@ def show_page3():
     plt.legend(title='Provincia')
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.pyplot(plt.show())
-    #
-    #
+    #Este código cargará los datos del archivo CSV y luego contará el número de casos de anemia por provincia. Luego, se creará un gráfico de barras que muestra el número de casos en cada provincia.
+    #Los nombres de las provincias se mostrarán en el eje x, y el número de casos se mostrará en el eje y. El título del gráfico se establecerá como "Número de casos de anemia por provincia.
+    st.write("Grafico de número de casos de anemia por provincia")
+    # Obtener el conteo de casos por provincia
+    casos_por_provincia = dataset['PROVINCIA'].value_counts()
+    # Crear el gráfico de barras
+    plt.figure(figsize=(10, 6))
+    casos_por_provincia.plot(kind='bar')
+    plt.title('Número de casos de anemia por provincia')
+    plt.xlabel('Provincia')
+    plt.ylabel('Número de casos')
+    plt.xticks(rotation=45)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot(plt.show())
+
+    #En este ejemplo, estamos contando el número de casos de anemia por departamento y luego creando un gráfico circular que muestra la distribución de casos entre los diferentes departamentos. Los nombres de los departamentos se utilizarán como etiquetas en el gráfico circular.
+    st.write("gráfico circular número de casos de anemia por departamento")
+    casos_por_departamento = dataset['DEPARTAMENTO'].value_counts()
+    # Crear el gráfico circular
+    plt.figure(figsize=(8, 8))
+    plt.pie(casos_por_departamento, labels=casos_por_departamento.index, autopct='%1.1f%%')
+    plt.title('Distribución de casos de anemia por departamento')
+    plt.axis('equal')
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot(plt.show())
+
+    #En este ejemplo, estamos contando el número de casos de anemia por microred y creando un gráfico circular que muestra la distribución de casos entre las microredes
+
+
+
 if __name__ == "__main__":
     main()
     
