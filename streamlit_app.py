@@ -306,19 +306,19 @@ def show_page3():
     st.pyplot(plt.show()) 
 
     #
-     def prueba():
+    def prueba():
     # Configurar la barra de navegación
-    st.sidebar.title("submenu")
-    pages = {
+      st.sidebar.title("submenu")
+      pages = {
         "Provinvias": show_home,
         "Cargar": show_page1,
         "Describir": show_page2,
         "Visualizar": show_page3
-    }
-    page = st.sidebar.selectbox("Ir a", tuple(pages.keys()))
+      }
+      page = st.sidebar.selectbox("Ir a", tuple(pages.keys()))
 
     # Mostrar la página seleccionada
-    pages[page]()
+      pages[page]()
 
 
 
