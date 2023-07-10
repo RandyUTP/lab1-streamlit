@@ -219,7 +219,7 @@ def show_page3():
     st.write("gráfico circular número de casos de anemia por microred")
     casos_por_microred = dataset['MICRORED'].value_counts()
     # Crear el gráfico circular
-    plt.figure(figsize=(8, 8))
+    plt.figure(figsize=(20,10))
     plt.pie(casos_por_microred, labels=casos_por_microred.index, autopct='%1.1f%%')
     plt.title('Distribución de casos de anemia por microred')
     plt.axis('equal')
