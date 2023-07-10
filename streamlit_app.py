@@ -129,7 +129,7 @@ def show_page3():
     st.write(data_nn.isnull().sum())
     #muestra el numero de casos por provincia
     
-    plt.figure(figsize=(10,2))
+    plt.figure(figsize=(2,2))
     plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
     plt.title('numeros de caso por provincia')
     st.set_option('deprecation.showPyplotGlobalUse', False)
