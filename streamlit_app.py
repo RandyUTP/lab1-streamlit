@@ -327,7 +327,7 @@ def show_page3():
        
     ]
     )
-    st.dataframe(df, use_container_width=True
+    st.dataframe(df, use_container_width=True)
 
 
 if __name__ == "__main__":
