@@ -11,6 +11,7 @@ def load_dataset():
     return dataset
 
 def  carga():
+    dataset = load_dataset()
     data_nn =dataset.dropna(subset=['PROVINCIA', 'DISTRITO'])
-    print(data_nn.isnull().sum())
+    st.write(data_nn)
     
