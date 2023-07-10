@@ -132,9 +132,7 @@ def show_page3():
     plt.figure(figsize=(16,6))
     plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
     plt.title('G')
-    plt.show()
-    
-    st.pyplot(plt.show)
+    st.pyplot(plt.show())
 
 if __name__ == "__main__":
     main()
