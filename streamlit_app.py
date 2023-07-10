@@ -21,7 +21,7 @@ def display():
         @st.cache
         def get_UN_data():
             df = pd.read_csv("/Casos_Anemia_Region_Cusco_2010_2020_Cusco.csv")
-            return df.set_index("Region")
+            return df.set_index("Provincia")
 
         df = get_UN_data()
         with st.expander("Explorando el dataframe"):
@@ -35,7 +35,7 @@ def display():
         countries = st.multiselect("Elegir País(es)", list(df.index), [])
 
         if not countries:
-            st.error("Seleccionar al menos 1 país.")
+            st.error("Seleccionar al menos 1 provincia.")
         else:
             data = df.loc[countries]
             data /= 1000000.0
