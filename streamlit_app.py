@@ -126,6 +126,11 @@ def show_page3():
     #mostrar datos 
     data_nn =dataset.dropna(subset=['PROVINCIA', 'DISTRITO'])
     st.write(data_nn.isnull().sum())
+    #muestra el numero de casos por provincia
+    plt.figure(figsize=(16,6))
+    plt.bar(data_nn['PROVINCIA'].unique(),data['PROVINCIA'].value_counts())
+    plt.title('G')
+    plt.show()
 
 if __name__ == "__main__":
     main()
