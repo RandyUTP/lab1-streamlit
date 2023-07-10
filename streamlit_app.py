@@ -265,7 +265,7 @@ def show_page3():
     # Crear el gráfico de líneas múltiples
     plt.figure(figsize=(10, 6))
     for provincia in provincias:
-    plt.plot(casos_por_anio_provincia.index, casos_por_anio_provincia[provincia], marker='o', label=provincia)
+        plt.plot(casos_por_anio_provincia.index, casos_por_anio_provincia[provincia], marker='o', label=provincia)
     plt.title('Evolución de casos de anemia por provincia')
     plt.xlabel('Año') 
     plt.ylabel('Total de casos')
