@@ -128,9 +128,9 @@ def show_page3():
     st.write(data_nn.isnull().sum())
     #muestra el numero de casos por provincia
     plt.figure(figsize=(16,6))
-    plt.bar(data_nn['PROVINCIA'].unique(),data['PROVINCIA'].value_counts())
+    mo = plt.bar(data_nn['PROVINCIA'].unique(),data['PROVINCIA'].value_counts())
     plt.title('G')
-    st.write(plt.show())
+    st.write(mo)
 
 if __name__ == "__main__":
     main()
