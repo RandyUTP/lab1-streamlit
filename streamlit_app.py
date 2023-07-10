@@ -19,7 +19,8 @@ def main():
         "Inicio": show_home,
         "Cargar": show_page1,
         "Describir": show_page2,
-        "Visualizar": show_page3
+        "Visualizar": show_page3,
+        "Diccionario de Datos": show_page4
     }
     page = st.sidebar.selectbox("Ir a", tuple(pages.keys()))
 
@@ -319,7 +320,14 @@ def show_page3():
 
     # Mostrar la página seleccionada
       pages[page]()
-
+def show_page3():
+    df = pd.DataFrame(
+    [
+        {"Variable": "st.selectbox", "Descripcion": 4},
+       
+    ]
+    )
+    st.dataframe(df, use_container_width=True
 
 
 if __name__ == "__main__":
