@@ -323,7 +323,7 @@ def show_page3():
 def show_page4():
     df = pd.DataFrame(
     [
-        {"Variable": "st.selectbox", "Descripcion": 4},
+        {"Variable": "DEPARTAMENTO", "Descripcion": "Nombre del departamento de ubicación del Gobierno Regional de Cusco", "Tipo de dato":"Texto", "Tamaño":30,},
        
     ]
     )
