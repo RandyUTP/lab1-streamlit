@@ -321,9 +321,9 @@ def show_page3():
     # Mostrar la página seleccionada
       pages[page]()
 def show_page4():
+    st.title("Casos de Anemia por Edades entre los años 2010 - 2020 en la Region de Cusco [Gobierno Regional Cusco]")
     df = pd.DataFrame(
     [
-        st.title("Casos de Anemia por Edades entre los años 2010 - 2020 en la Region de Cusco [Gobierno Regional Cusco]")
         {"Variable": "DEPARTAMENTO", "Descripcion": "Nombre del departamento de ubicación del Gobierno Regional de Cusco", "Tipo de dato":"Texto", "Tamaño":30,},
         {"Variable": "PROVINCIA", "Descripcion": "Nombre de la provincia de ubicación del Gobierno Regional de Cusco", "Tipo de dato":"Texto", "Tamaño":30,},
         {"Variable": "DISTRITO", "Descripcion": "Nombre del distrito de ubicación del Gobierno Regional de Cusco", "Tipo de dato":"Texto", "Tamaño":30,},
