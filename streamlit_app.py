@@ -131,7 +131,8 @@ def show_page3():
     # fig, ax = plt.subplots()
     #ax.plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
     #plt.title('G')
-    plt.hist(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
+    data = np.random.normal(0, 1, size=100)
+    plt.hist(datset, bins=20)
     st.pyplot()
 
 if __name__ == "__main__":
