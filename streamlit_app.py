@@ -215,6 +215,16 @@ def show_page3():
     st.pyplot(plt.show())
 
     #En este ejemplo, estamos contando el número de casos de anemia por microred y creando un gráfico circular que muestra la distribución de casos entre las microredes
+    # Obtener el conteo de casos por microred
+    st.write("gráfico circular número de casos de anemia por microred")
+    casos_por_microred = data['MICRORED'].value_counts()
+    # Crear el gráfico circular
+    plt.figure(figsize=(8, 8))
+    plt.pie(casos_por_microred, labels=casos_por_microred.index, autopct='%1.1f%%')
+    plt.title('Distribución de casos de anemia por microred')
+    plt.axis('equal')
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot(plt.show())
 
 
 
