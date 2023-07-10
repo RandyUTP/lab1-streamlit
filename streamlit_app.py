@@ -129,12 +129,12 @@ def show_page3():
     st.write(data_nn.isnull().sum())
     #muestra el numero de casos por provincia
     
-    # fig, ax = plt.subplots()
-    #ax.plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
-    #plt.title('G')
-    data = np.random.normal(0, 1, size=100)
-    plt.hist(data, bins=20)
-    st.pyplot()
+    plt.figure(figsize=(16,6))
+    plt.bar(data_nn['PROVINCIA'].unique(),dataset['PROVINCIA'].value_counts())
+    plt.title('G')
+    plt.show()
+    
+    st.pyplot(plt.show)
 
 if __name__ == "__main__":
     main()
